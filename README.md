@@ -1,17 +1,125 @@
-# qurantom
+# 🕌 Qurantom — Quran Audio Player
 
-A new Flutter project.
+A beautiful, minimal Quran audio player built with Flutter. Stream all 114 Surahs with a clean Islamic-inspired dark UI.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## ✨ Features
 
-A few resources to get you started if this is your first Flutter project:
+- 📖 **Browse all 114 Surahs** — with Arabic name, English name, translation, and number of Ayahs
+- 🔍 **Real-time search** — search by Surah name, translation, or number
+- 🎵 **Audio streaming** — stream Surah audio directly from the internet
+- ⏯️ **Full playback controls** — play, pause, seek, rewind/forward 10 seconds
+- 📊 **Progress bar** — live position and duration display
+- 🎛️ **Mini player** — persistent bottom bar while browsing the Surah list
+- 🌙 **Dark Islamic-inspired theme** — deep navy, gold accents
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📸 Screenshots
+
+> Add your screenshots here after running the app.
+
+| Surah List | Player Screen |
+|---|---|
+| `assets/screenshots/surah_list.png` | `assets/screenshots/player.png` |
+
+---
+
+## 🏗️ Architecture
+
+This app uses the **BLoC pattern** for state management.
+
+```
+lib/
+├── blocs/
+│   ├── surah_bloc.dart         # Surah list logic
+│   ├── player_bloc.dart        # Audio playback logic
+│   ├── surah/
+│   │   ├── surah_event.dart
+│   │   └── surah_state.dart
+│   ├── player_event.dart
+│   └── player_state.dart
+├── models/
+│   └── surah.dart              # Surah data model
+├── repositories/
+│   └── quran_repository.dart   # API calls
+├── screens/
+│   ├── surah_list_screen.dart  # Main screen
+│   └── player_screen.dart      # Full player screen
+├── widgets/
+│   ├── mini_player_bar.dart    # Persistent bottom player
+│   ├── surah_list_tile.dart    # Surah list item
+│   └── shimmer_list.dart       # Loading skeleton
+└── utils/
+    ├── app_theme.dart          # Theme & colors
+    └── duration_formatter.dart # Time formatting
+```
+
+---
+
+## 🔄 State Management
+
+### SurahBloc
+| State | Description |
+|---|---|
+| `SurahInitial` | Before any data is loaded |
+| `SurahLoading` | Fetching Surahs from API |
+| `SurahLoaded` | Surahs loaded, supports search filtering |
+| `SurahError` | Failed to fetch data |
+
+### PlayerBloc
+| State | Description |
+|---|---|
+| `PlayerInitial` | Player not yet used |
+| `PlayerActive` | Player active with full playback info |
+
+#### PlayerStatus (enum)
+`initial` · `loading` · `playing` · `paused` · `completed` · `error`
+
+---
+
+## 📦 Dependencies
+
+```yaml
+dependencies:
+  flutter_bloc: # State management
+  equatable:    # Value equality for BLoC states
+  just_audio:   # Audio streaming
+```
+
+---
+
+## 🚀 Getting Started
+
+```bash
+# Clone the project
+git clone https://github.com/yourusername/qurantom.git
+
+# Install dependencies
+flutter pub get
+
+# Run the app
+flutter run
+```
+
+> Requires Flutter 3.x and an internet connection for audio streaming.
+
+---
+
+## 🎨 Theme Colors
+
+| Name | Hex | Usage |
+|---|---|---|
+| Background Dark | `#0D1117` | Main background |
+| Background Card | `#161B22` | Cards & surfaces |
+| Accent Gold | `#D4AF37` | Primary accent |
+| Text Primary | `#E6EDF3` | Main text |
+| Text Secondary | `#8B949E` | Subtitles |
+
+---
+
+## 🤲 Credits
+
+- Quran data & audio from [AlQuran Cloud API](https://alquran.cloud/api)
+- Built with [Flutter](https://flutter.dev) & [BLoC](https://bloclibrary.dev)
