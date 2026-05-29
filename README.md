@@ -114,6 +114,10 @@ flutter run
 
 ---
 
+## 📥 Download
+
+[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen?style=for-the-badge&logo=android)](https://github.com/tomflutter/alurantom/releases/latest/download/qurantom.apk)
+
 ## 🎨 Theme Colors
 
 | Name | Hex | Usage |
