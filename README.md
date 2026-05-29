@@ -3,6 +3,13 @@
 A beautiful, minimal Quran audio player built with Flutter. Stream all 114 Surahs with a clean Islamic-inspired dark UI.
 
 ---
+ 
+## 📱 Demo
+ 
+[![Demo Qurantom](https://img.youtube.com/vi/lpofgvmGIL0/0.jpg)](https://youtube.com/shorts/lpofgvmGIL0)
+ 
+---
+
 
 ## ✨ Features
 
@@ -22,7 +29,7 @@ A beautiful, minimal Quran audio player built with Flutter. Stream all 114 Surah
 
 | Surah List | Player Screen |
 |---|---|
-| `assets/screenshots/surah_list.png` | `assets/screenshots/player.png` |
+| <img src="https://raw.githubusercontent.com/tomflutter/alurantom/refs/heads/master/assets/screenshots/surah_list.png" width="180"/> | <img src="https://raw.githubusercontent.com/tomflutter/alurantom/refs/heads/master/assets/screenshots/player.png" width="180"/> |
 
 ---
 
